@@ -1,0 +1,26 @@
+{
+    "name": "com.teetwostudio.services.shortcutpresentor",
+    "version": "1.0.0",
+    "unityRelease": "2f1",
+    "displayName": "TEE II Studio Services google sheet importor",
+    "description": "This will help your for ping project window view faster and open many scene on one inspactor.",
+    "dependencies": {
+      "com.teetwostudio.services.utility": "1.0.1",
+      "com.unity.editorcoroutines": "1.0.0"
+    },
+    "keywords": [
+      "shortcutpresentor",
+      "Services"
+    ],
+    "category": "Utility",
+    "unity": "2022.3",
+    "author": {
+      "name": "TEE II studio",
+      "email": "watchaphon40225@gmail.com"
+    },
+    "repository": {
+      "url": "https://github.com/II-STUDIO/com.teetwostudio.services.google.sheetimportor.git",
+      "type": "git",
+      "revision": "6b783c5dfb5a72d73e2b0a70d1caf4a367c58805"
+    }
+}
