@@ -2,7 +2,7 @@
     "name": "com.teetwostudio.services.shortcutpresentor",
     "version": "1.0.0",
     "unityRelease": "2f1",
-    "displayName": "TEE II Studio Services google sheet importor",
+    "displayName": "TEE II Studio Services shortcut presentor",
     "description": "This will help your for ping project window view faster and open many scene on one inspactor.",
     "dependencies": {
       "com.teetwostudio.services.utility": "1.0.1",
