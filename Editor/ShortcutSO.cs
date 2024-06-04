@@ -7,8 +7,11 @@ namespace Services.ShortcutPresentor
 {
     public class ShortcutSO : ScriptableObject
     {
-        public List<SceneAsset> sceneAssets = new List<SceneAsset>();
-        public List<DefaultAsset> defaultAssets = new List<DefaultAsset>();
+        public bool showAssetPath = true;
+        public bool explainOnOpen = true;
+
+        public List<ShortcutCatagory<SceneAsset>> sceneCatagory = new();
+        public List<ShortcutCatagory<DefaultAsset>> defaultCatagory = new();
     }
 }
 #endif
