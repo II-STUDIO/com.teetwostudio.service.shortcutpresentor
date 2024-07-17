@@ -56,9 +56,7 @@ namespace Services.ShortcutPresentor
         {
             var window = GetWindow<ShortcutWindowEditor>("ShotcutPresentor");
 
-            AssetFounderUtility.FoundExistOrCreateOneSO(SODirectory, SOName, out window.so);
-
-            window.SetupAnimBool();
+            window.Initialize();
         }
 
         private void SetupAnimBool()
@@ -71,8 +69,21 @@ namespace Services.ShortcutPresentor
             }
         }
 
+        private void Initialize()
+        {
+            AssetFounderUtility.FoundExistOrCreateOneSO(SODirectory, SOName, out so);
+
+            SetupAnimBool();
+        }
+
         private void OnGUI()
         {
+            if (!so)
+            {
+                Initialize();
+                return;
+            }
+
             using (var scrollView = new EditorGUILayout.ScrollViewScope(scrollPos))
             {
                 scrollPos = scrollView.scrollPosition;
@@ -243,16 +254,16 @@ namespace Services.ShortcutPresentor
         }
         #endregion
 
-        private void DrawMainGUI<T>(List<ShortcutCatagory<T>> catagoryList,AnimBoolGroupController<ShortcutCatagory<T>> animBoolGroup, ExistAssetSlotDrawer<T> existAssetSlotDrawer) where T : Object
+        private void DrawMainGUI<T>(List<ShortcutCatagory<T>> catagoryList, AnimBoolGroupController<ShortcutCatagory<T>> animBoolGroup, ExistAssetSlotDrawer<T> existAssetSlotDrawer) where T : Object
         {
-            if(catagoryList.Count == 0)
+            if (catagoryList.Count == 0)
             {
                 EditorGUILayout.LabelField("sence is empty add your fist catagory", middleLabelStyle);
 
                 CheckRightClickOnArea(() =>
                 {
-                    ShowDropdownMenu(new MenuInfo("Add Catagory", () => 
-                    { 
+                    ShowDropdownMenu(new MenuInfo("Add Catagory", () =>
+                    {
                         AddCatagory(catagoryList, animBoolGroup);
                     }));
                 });
@@ -260,7 +271,7 @@ namespace Services.ShortcutPresentor
                 return;
             }
 
-            for(int i = 0; i < catagoryList.Count; i++)
+            for (int i = 0; i < catagoryList.Count; i++)
             {
                 DrawCatagoryList(catagoryList, animBoolGroup, i, existAssetSlotDrawer);
             }

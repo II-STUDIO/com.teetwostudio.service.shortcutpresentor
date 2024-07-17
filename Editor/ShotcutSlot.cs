@@ -8,7 +8,12 @@ namespace Services.ShortcutPresentor
     [System.Serializable]
     public class ShortcutSlot<TAsset> : IShortcutSlot where TAsset : Object
     {
-        public string displayName {  get; set; }
+        public string displayName
+        {
+            get => m_displayName;
+            set => m_displayName = value;
+        }
+
         public string assetName 
         {
             get
@@ -32,6 +37,8 @@ namespace Services.ShortcutPresentor
         }
 
         public TAsset asset;
+
+        [SerializeField] private string m_displayName;
     }
 
     public interface IShortcutSlot 
