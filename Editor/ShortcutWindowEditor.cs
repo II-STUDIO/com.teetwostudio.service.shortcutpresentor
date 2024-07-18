@@ -509,6 +509,9 @@ namespace Services.ShortcutPresentor
         }
         private void SaveSO()
         {
+            if (!so)
+                return;
+
             EditorUtility.SetDirty(so);
             AssetDatabase.SaveAssetIfDirty(so);
         }
