@@ -1,6 +1,6 @@
 {
     "name": "com.teetwostudio.services.shortcutpresentor",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "unityRelease": "2f1",
     "displayName": "TEE II Studio Services shortcut presentor",
     "description": "This will help your for ping project window view faster and open many scene on one inspactor.",
